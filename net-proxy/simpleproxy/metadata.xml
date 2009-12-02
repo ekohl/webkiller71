@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+<herd></herd>
+<longdescription lang="en">
+This is a simple tcp proxy which allows you to forward tcp connections from one host to another. It also works though HTTPS and can do very simple POP3 users filtering.
+</longdescription>
+</pkgmetadata>
+
