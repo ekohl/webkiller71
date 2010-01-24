@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+<herd></herd>
+<longdescription lang="en">
+</longdescription>
+<use>
+  <flag name="darcs">Support for the darcs VCS</flag>
+  <flag name="git">Support for the git VCS</flag>
+  <flag name="mercurial">Support for the mercurial VCS</flag>
+  <flag name="openid">Enable OpenID authentication</flag>
+</use>
+</pkgmetadata>
+
