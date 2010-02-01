@@ -1,28 +1,25 @@
 #!/sbin/runscript
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/cachefilesd/cachefilesd/files/cachefilesd.rc ,v 1.0 2000/11/10 18:45:10 [Enrico] Exp $
-
-
+# $Header: $
 
 depend() {
 	need localmount
 	use logger
 }
 
-
 checkxattr()
 {
-	# it is fixed for now but it can be easly get from the config file
-	local testpath="/var/fscache"
-	local testfile="${testpath}/xattr-test"
-	touch ${testfile}
+	local testpath testfile ret
+	testpath=$(awk '/^[[:space:]]*dir/ {print $2}' /etc/cachefilesd.conf)
+	testfile="${testpath}/.tmp-xattr-test.cachefilesd"
+	touch "${testfile}"
 	# creates a file in the testpath and tries to set an attribute on it to check
-	# if the support is avaible
-	attr -s test -V xattr ${testfile} > /dev/null
-	local ret=$?
-	rm ${testfile}
-	[ ${ret} -ne "0" ] && eerror "xattr support missing on the ${testpath} filesystem"
+	# if the support is available 
+	attr -s test -V xattr "${testfile}" 2>&1 > /dev/null
+	ret=$?
+	rm -f "${testfile}"
+	[ ${ret} -ne 0 ] && eerror "xattr support missing on the ${testpath} filesystem"
 	return ${ret}
 }
 
@@ -35,11 +32,12 @@ start() {
 		einfo "/dev/cachefiles doesn't exist, trying to modprobe cachefiles"
 		modprobe cachefiles
 		ret=$?
-		[ $ret -ne "0" ] &&
-		eerror "cachefiles modules cannot be loaded so cachefilesd 
+		if [ $ret -ne 0 ] ; then
+			eerror "cachefiles modules cannot be loaded so cachefilesd
 cannot be started, aborting. Did you build fscache in your 
-kernel? Note that you need a 2.6.30 or better kernel" &&
-		return $ret
+kernel? Note that you need a 2.6.30 or better kernel"
+			return $ret
+		fi
 	fi
 	start-stop-daemon --start --exec /sbin/cachefilesd --pidfile /var/run/cachefilesd.pid
 	eend $? "Failed to start cachefilesd. Check the system log to see the error"
@@ -51,4 +49,3 @@ stop() {
 	start-stop-daemon --stop --exec /sbin/cachefilesd --pidfile /var/run/cachefilesd.pid
 	eend $? "Failed to stop cachefilesd"
 }
-
