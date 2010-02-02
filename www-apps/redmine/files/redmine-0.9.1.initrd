@@ -1,0 +1,28 @@
+#!/sbin/runscript
+# Copyright 1999-2008 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
+
+depend() {
+	use net
+}
+
+start() {
+	ebegin "Starting redmine"
+	cd /var/lib/redmine
+	start-stop-daemon --start --quiet \
+		--exec /usr/bin/ruby18 -- /usr/bin/mongrel_rails \
+		mongrel::start -e ${ENV:-production} \
+		-a ${ADDRESS:-localhost} -p ${PORT:-3000} \
+		--user redmine --group redmine \
+		-c /var/lib/redmine -d -l /var/log/mongrel.log
+	eend $?
+
+}
+
+stop() {
+	ebegin "Stopping redmine"
+	cd /var/lib/redmine
+        start-stop-daemon --stop --quiet --pidfile /var/lib/redmine/log/mongrel.pid
+	eend $?
+}
