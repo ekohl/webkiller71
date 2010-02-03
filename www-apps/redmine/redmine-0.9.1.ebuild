@@ -14,7 +14,7 @@ LICENSE="GPL-2"
 SLOT="0"
 IUSE="apache2 cvs darcs git imagemagick mercurial mysql openid postgres sqlite3 subversion"
 
-COMMON_DEPEND=" >=dev-ruby/rails-2.3.5:2.3
+COMMON_DEPEND=">=dev-ruby/rails-2.3.5:2.3
 	>=dev-ruby/rack-1.0.1
 	dev-ruby/activerecord:2.3[mysql?,postgres?,sqlite3?]
 	imagemagick? ( dev-ruby/rmagick )
@@ -27,6 +27,7 @@ DEPEND="${COMMON_DEPEND}
 	)"
 
 RDEPEND="${COMMON_DEPEND}
+	>=dev-ruby/coderay-0.7.6.227
 	>=dev-ruby/rubygems-1.3.5
 	>=dev-ruby/ruby-net-ldap-0.0.4
 	apache2? ( www-apache/passenger )
@@ -34,8 +35,7 @@ RDEPEND="${COMMON_DEPEND}
 	darcs? ( dev-util/darcs )
 	git? ( dev-util/git )
 	mercurial? ( dev-util/mercurial )
-	subversion? ( >=dev-util/subversion-1.3 )
-	>=dev-ruby/coderay-0.7.6.227"
+	subversion? ( >=dev-util/subversion-1.3 )"
 
 REDMINE_DIR="/var/lib/${PN}"
 
@@ -48,7 +48,6 @@ pkg_setup() {
 
 src_prepare() {
 	epatch "${FILESDIR}/redmine-test-gems.patch"
-#	epatch "${FILESDIR}/changeset_r3359.diff"
 
 	rm -fr log files/delete.me || die
 	rm -fr vendor/plugins/coderay-0.7.6.227 || die
