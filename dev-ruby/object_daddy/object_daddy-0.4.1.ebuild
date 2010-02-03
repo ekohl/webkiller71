@@ -6,22 +6,17 @@ EAPI=2
 
 USE_RUBY="ruby18"
 
-RUBY_FAKEGEM_EXTRADOC="README.markdown"
-
 inherit ruby-fakegem
 
 DESCRIPTION="Kill Rails fixtures, DRY, reduce the complexity of your tests."
-HOMEPAGE="http://github.com/flogic/object_daddy"
-SRC_URI="http://github.com/flogic/${PN}/tarball/v${PV} -> ${P}.tgz"
-S="${WORKDIR}/flogic-${PN}-62102e9"
+HOMEPAGE="http://github.com/nofxx/object_daddy"
+# The source is on github, but the author doesn't tag
+SRC_URI="http://gems.github.com/gems/nofxx-${P}.gem"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-ruby_add_bdepend test "dev-ruby/rspec"
-
-each_ruby_test() {
-	spec spec/
-}
+# The test files aren't bundled with the gem
+RESTRICT="test"
