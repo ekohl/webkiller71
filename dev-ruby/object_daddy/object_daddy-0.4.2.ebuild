@@ -22,12 +22,6 @@ IUSE=""
 
 ruby_add_bdepend test "dev-ruby/rspec"
 
-#each_ruby_install() {
-#	doruby init.rb
-#	doruby -r lib
-#	dodoc README.markdown
-#}
-
 each_ruby_test() {
 	spec spec/
 }
