@@ -1,0 +1,10 @@
+# ChangeLog for www-apps/redmine
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  03 Feb 2010; Ewoud Kohl van Wijngaarden <ewoud@kohlvanwijngaarden.nl>
+  -redmine-0.8.7.ebuild, -files/redmine-0.8.7.confd,
+  -files/redmine-0.8.7.initd, redmine-0.9.1.ebuild,
+  +files/redmine-test-gems.patch:
+  Remove 0.8.7 and add tests to 0.9.1
+

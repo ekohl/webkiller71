@@ -9,18 +9,24 @@ DESCRIPTION="Redmine is a flexible project management web application written us
 HOMEPAGE="http://www.redmine.org/"
 SRC_URI="mirror://rubyforge/${PN}/${P}.tar.gz"
 
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 LICENSE="GPL-2"
 SLOT="0"
 IUSE="apache2 cvs darcs git imagemagick mercurial mysql openid postgres sqlite3 subversion"
 
-DEPEND=">=dev-ruby/rails-2.3.5:2.3
+COMMON_DEPEND=" >=dev-ruby/rails-2.3.5:2.3
 	>=dev-ruby/rack-1.0.1
 	dev-ruby/activerecord:2.3[mysql?,postgres?,sqlite3?]
 	imagemagick? ( dev-ruby/rmagick )
 	openid? ( dev-ruby/ruby-openid )"
+DEPEND="${COMMON_DEPEND}
+	test? (
+		dev-ruby/shoulda
+		dev-ruby/object_daddy
+		dev-ruby/mocha
+	)"
 
-RDEPEND="${DEPEND}
+RDEPEND="${COMMON_DEPEND}
 	>=dev-ruby/rubygems-1.3.5
 	>=dev-ruby/ruby-net-ldap-0.0.4
 	apache2? ( www-apache/passenger )
@@ -41,6 +47,9 @@ pkg_setup() {
 }
 
 src_prepare() {
+	epatch "${FILESDIR}/redmine-test-gems.patch"
+#	epatch "${FILESDIR}/changeset_r3359.diff"
+
 	rm -fr log files/delete.me || die
 	rm -fr vendor/plugins/coderay-0.7.6.227 || die
 	rm -fr vendor/plugins/ruby-net-ldap-0.0.4 || die
@@ -81,6 +90,13 @@ src_install() {
 		dosym /var/run/${PN}/ "${REDMINE_DIR}/tmp/pids" || die
 	fi
 	doenvd "${T}/50${PN}" || die
+}
+
+src_test() {
+	cp config/database.yml{.example,}
+	export RAILS_ENV="test_sqlite3"
+	rake db:migrate
+	rake test
 }
 
 pkg_postinst() {
