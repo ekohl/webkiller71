@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+<herd></herd>
+<longdescription lang="en">
+The Translate Toolkit is a set of software and documentation designed to help
+make the lives of localizers both more productive and less frustrating.
+The Toolkit is part of the translate.sourceforge.net project,
+hosted at http://translate.sourceforge.net/
+
+The software includes programs to covert localization formats to the common
+PO, and emerging XLIFF format.  There are also programs to check and manage PO
+and XLIFF files.  Online documentation includes guides on using the tools,
+running a localization project and how to localize various projects from
+OpenOffice.org to Mozilla.
+
+At its core the software contains a set of classes for handling various
+localization storage formats: DTD, properties, OpenOffice.org GSI/SDF,
+CSV, MO, Qt .ts, TMX, TBX, WordFast txt, Gettext .mo, Windows RC, and
+of course PO and XLIFF.  It also provides scripts to convert between
+these formats.
+
+Also part of the Toolkit are Python programs to create word counts, merge
+translations and perform various checks on translation files.
+</longdescription>
+<use>
+	<flag name="html">Support to edit HTML</flag>
+	<flag name="fuzzy">Improve performance for fuzzy matching</flag>
+	<flag name="iso-codes">Translate language names</flag>
+	<flag name="ical">Support to edit ical</flag>
+	<flag name="subtitle">Support to edit subtitles</flag>
+</use>
+</pkgmetadata>
+
