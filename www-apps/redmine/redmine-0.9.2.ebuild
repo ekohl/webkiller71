@@ -12,7 +12,7 @@ SRC_URI="mirror://rubyforge/${PN}/${P}.tar.gz"
 KEYWORDS="~amd64"
 LICENSE="GPL-2"
 SLOT="0"
-IUSE="apache2 cvs darcs git imagemagick mercurial mysql openid postgres sqlite3 subversion"
+IUSE="cvs darcs git imagemagick mercurial mysql openid passenger postgres sqlite3 subversion"
 
 COMMON_DEPEND=">=dev-ruby/rails-2.3.5:2.3
 	>=dev-ruby/rack-1.0.1
@@ -30,7 +30,7 @@ RDEPEND="${COMMON_DEPEND}
 	>=dev-ruby/coderay-0.7.6.227
 	>=dev-ruby/rubygems-1.3.5
 	>=dev-ruby/ruby-net-ldap-0.0.4
-	apache2? ( www-apache/passenger )
+	passenger? ( www-apache/passenger )
 	cvs? ( >=dev-util/cvs-1.12 )
 	darcs? ( dev-util/darcs )
 	git? ( dev-util/git )
@@ -77,13 +77,13 @@ src_install() {
 	# for SCM
 	fowners redmine:redmine "${REDMINE_DIR}" || die
 
-	if use apache2 ; then
+	if use passenger ; then
 		has_apache
 		insinto "${APACHE_VHOSTS_CONFDIR}"
 		doins "${FILESDIR}/10_redmine_vhost.conf" || die
 	else
-		newconfd "${FILESDIR}/${P}.confd" ${PN} || die
-		newinitd "${FILESDIR}/${P}.initd" ${PN} || die
+		newconfd "${FILESDIR}/${PN}.confd" ${PN} || die
+		newinitd "${FILESDIR}/${PN}.initd" ${PN} || die
 		keepdir /var/run/${PN} || die
 		fowners -R redmine:redmine /var/run/${PN} || die
 		dosym /var/run/${PN}/ "${REDMINE_DIR}/tmp/pids" || die

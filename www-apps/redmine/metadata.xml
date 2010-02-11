@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-<herd></herd>
+<herd>no-herd</herd>
 <longdescription lang="en">
 </longdescription>
 <use>
-  <flag name="darcs">Support for the darcs VCS</flag>
-  <flag name="git">Support for the git VCS</flag>
-  <flag name="mercurial">Support for the mercurial VCS</flag>
-  <flag name="openid">Enable OpenID authentication</flag>
+  <flag name='darcs'>Enable support for <pkg>dev-util/darcs</pkg></flag>
+  <flag name='git'>Enable support for <pkg>dev-util/git</pkg></flag>
+  <flag name='mercurial'>Enable support for <pkg>dev-util/mercurial</pkg></flag>
+  <flag name='openid'>Enable support for OpenID</flag>
+  <flag name='passenger'>Enable support for <pkg>www-apache/passenger</pkg></flag>
 </use>
 </pkgmetadata>
 
