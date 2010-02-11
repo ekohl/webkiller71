@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+<herd></herd>
+<longdescription lang="en">
+The goal of suds is to present an RPC-like interface into soap-based web
+services. This means that in most cases, users do not need to be concerned with
+the complexities of the WSDL and referenced schemas. Regardless of which soap
+message style is specified, the signature of the service methods remain the
+same. Uses that do examine the WSDL will notice that even with the document soap
+message style, the signature of each method resembles an RPC. The method
+signature contains the contents of the document defined for the message instead
+of the document itself.
+</longdescription>
+</pkgmetadata>
+
