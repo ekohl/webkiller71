@@ -31,7 +31,7 @@ src_compile() {
 
 src_install() {
 	emake DESTDIR="${D}" install || die "Install failed"
-	dodoc README howto.txt move-cache.txt || die "dodoc failed"
+	dodoc README howto.txt || die "dodoc failed"
 	newinitd "${FILESDIR}"/cachefilesd.rc cachefilesd || die "newinitd failed"
 	keepdir /var/fscache || die "keepdir failed"
 }
