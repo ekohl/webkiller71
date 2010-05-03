@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI=2
+
 inherit toolchain-funcs linux-info
 
 DESCRIPTION="Cache remote filesystems locally"
@@ -11,16 +13,21 @@ SRC_URI="http://people.redhat.com/~dhowells/fscache/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="selinux"
 
 RDEPEND="sys-apps/attr"
 
 CONFIG_CHECK="~FSCACHE ~CACHEFILES"
 
-pkg_setup()
-{
+pkg_setup() {
 	if kernel_is lt 2 6 30 ; then
 		ewarn "Kernel 2.6.30 or newer is needed to use ${PN}"
+	fi
+}
+
+src_prepare() {
+	if ! use selinux ; then
+		sed -i 's/^secctx/#secctx/' cachefilesd.conf || die "sed failed"
 	fi
 }
 
