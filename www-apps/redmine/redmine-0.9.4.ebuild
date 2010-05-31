@@ -9,7 +9,7 @@ DESCRIPTION="Redmine is a flexible project management web application written us
 HOMEPAGE="http://www.redmine.org/"
 SRC_URI="mirror://rubyforge/${PN}/${P}.tar.gz"
 
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~x86"
 LICENSE="GPL-2"
 SLOT="0"
 IUSE="cvs darcs git imagemagick mercurial mysql openid passenger postgres sqlite3 subversion"
@@ -32,9 +32,9 @@ RDEPEND="${COMMON_DEPEND}
 	>=dev-ruby/ruby-net-ldap-0.0.4
 	passenger? ( www-apache/passenger )
 	cvs? ( >=dev-util/cvs-1.12 )
-	darcs? ( dev-util/darcs )
-	git? ( dev-util/git )
-	mercurial? ( dev-util/mercurial )
+	darcs? ( dev-vcs/darcs )
+	git? ( dev-vcs/git )
+	mercurial? ( dev-vcs/mercurial )
 	subversion? ( >=dev-util/subversion-1.3 )"
 
 REDMINE_DIR="/var/lib/${PN}"
@@ -47,7 +47,7 @@ pkg_setup() {
 }
 
 src_prepare() {
-	epatch "${FILESDIR}/redmine-test-gems.patch"
+	epatch "${FILESDIR}/Require-generic-gems.patch"
 
 	rm -fr log files/delete.me || die
 	rm -fr vendor/plugins/coderay-0.7.6.227 || die
