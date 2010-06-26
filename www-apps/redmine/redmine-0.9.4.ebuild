@@ -31,11 +31,11 @@ RDEPEND="${COMMON_DEPEND}
 	>=dev-ruby/rubygems-1.3.5
 	>=dev-ruby/ruby-net-ldap-0.0.4
 	passenger? ( www-apache/passenger )
-	cvs? ( >=dev-util/cvs-1.12 )
+	cvs? ( >=dev-vcs/cvs-1.12 )
 	darcs? ( dev-vcs/darcs )
 	git? ( dev-vcs/git )
 	mercurial? ( dev-vcs/mercurial )
-	subversion? ( >=dev-util/subversion-1.3 )"
+	subversion? ( >=dev-vcs/subversion-1.3 )"
 
 REDMINE_DIR="/var/lib/${PN}"
 
