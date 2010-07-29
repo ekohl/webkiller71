@@ -13,7 +13,9 @@ EGIT_REPO_URI="git://github.com/dcramer/django-devserver.git"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS=""
-IUSE=""
+IUSE="guppy werkzeug"
 
 DEPEND=""
-RDEPEND="${DEPEND}"
+RDEPEND="${DEPEND}
+	guppy? ( dev-python/guppy )
+	werkzeug? ( dev-python/werkzeug )"

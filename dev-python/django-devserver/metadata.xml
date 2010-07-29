@@ -9,5 +9,9 @@ A drop in replacement for Django's built-in runserver command. Features include:
 * Integration with the werkzeug interactive debugger.
 * An improved runserver allowing you to process requests simultaneously.
 </longdescription>
+<use>
+	<flag name="guppy">tracks memory usage (required for MemoryUseModule)</flag>
+	<flag name="werkzeug">interactive debugger</flag>
+</use>
 </pkgmetadata>
 
