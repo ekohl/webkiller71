@@ -17,5 +17,6 @@ IUSE="guppy werkzeug"
 
 DEPEND=""
 RDEPEND="${DEPEND}
+	>=dev-python/django-1.1
 	guppy? ( dev-python/guppy )
 	werkzeug? ( dev-python/werkzeug )"
