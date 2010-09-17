@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+<herd></herd>
+<maintainer>
+	<email>ewoud@kohlvanwijngaarden.nl</email>
+	<name>Ewoud Kohl van Wijngaarden</name>
+</maintainer>
+<longdescription lang="en">
+Pootle is a user-friendly web portal that makes the translation process so much
+simpler. It allows online translation, work assignment, gives statistics and
+allows easy volunteer contribution. You can run Pootle as an Internet server
+like these projects or run your own copy on an Intranet (for individual work,
+team work or Translate@thons).
+</longdescription>
+</pkgmetadata>
+
