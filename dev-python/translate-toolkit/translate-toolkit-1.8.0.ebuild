@@ -29,7 +29,6 @@ RDEPEND="${DEPEND}"
 # FIXME: don't install docs in /usr/lib/python/site-packages
 
 pkg_postinst() {
-	echo
 	elog "You can export USECPO=2 (or 1) at runtime to use the system gettext."
 	elog "The authors indicate that it hasn't been extensivly tested, so be"
 	elog "warned."
