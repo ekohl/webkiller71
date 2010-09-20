@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
-<pkgmetadata>
-<herd></herd>
-<longdescription lang="en">
-CacheFS is a general cache facility and can be used to cache NFS mounts. It is written by David Howells / Red Hat, Inc.
-</longdescription>
-</pkgmetadata>
-
