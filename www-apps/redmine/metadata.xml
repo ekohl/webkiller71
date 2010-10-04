@@ -2,8 +2,10 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 <herd>no-herd</herd>
-<longdescription lang="en">
-</longdescription>
+<maintainer>
+    <email>ewoud@kohlvanwijngaarden.nl</email>
+    <name>Ewoud Kohl van Wijngaarden</name>
+</maintainer>
 <use>
   <flag name='darcs'>Enable support for <pkg>dev-util/darcs</pkg></flag>
   <flag name='git'>Enable support for <pkg>dev-util/git</pkg></flag>

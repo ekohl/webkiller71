@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-<herd></herd>
+<herd>no-herd</herd>
+<maintainer>
+    <email>ewoud@kohlvanwijngaarden.nl</email>
+    <name>Ewoud Kohl van Wijngaarden</name>
+</maintainer>
 <longdescription lang="en">
-wmname prints/sets the window manager name property of the root window similar to how hostname(1) behaves.
+wmname prints/sets the window manager name property of the root window similar
+to how hostname(1) behaves.
 
-wmname is a nice utility to fix problems with JDK versions and other broken programs assuming a reparenting window manager for instance.
+wmname is a nice utility to fix problems with JDK versions and other broken
+programs assuming a reparenting window manager for instance.
 </longdescription>
 </pkgmetadata>
-

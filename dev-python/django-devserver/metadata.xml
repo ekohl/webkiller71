@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-<herd></herd>
+<herd>no-herd</herd>
+<maintainer>
+    <email>ewoud@kohlvanwijngaarden.nl</email>
+    <name>Ewoud Kohl van Wijngaarden</name>
+</maintainer>
 <longdescription lang="en">
 A drop in replacement for Django's built-in runserver command. Features include:
 
@@ -14,4 +18,3 @@ A drop in replacement for Django's built-in runserver command. Features include:
 	<flag name="werkzeug">interactive debugger</flag>
 </use>
 </pkgmetadata>
-

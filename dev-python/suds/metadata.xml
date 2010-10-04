@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-<herd></herd>
+<herd>no-herd</herd>
+<maintainer>
+    <email>ewoud@kohlvanwijngaarden.nl</email>
+    <name>Ewoud Kohl van Wijngaarden</name>
+</maintainer>
 <longdescription lang="en">
 The goal of suds is to present an RPC-like interface into soap-based web
 services. This means that in most cases, users do not need to be concerned with
@@ -13,4 +17,3 @@ signature contains the contents of the document defined for the message instead
 of the document itself.
 </longdescription>
 </pkgmetadata>
-

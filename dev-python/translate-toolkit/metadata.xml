@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-<herd></herd>
+<herd>no-herd</herd>
+<maintainer>
+    <email>ewoud@kohlvanwijngaarden.nl</email>
+    <name>Ewoud Kohl van Wijngaarden</name>
+</maintainer>
 <longdescription lang="en">
 The Translate Toolkit is a set of software and documentation designed to help
 make the lives of localizers both more productive and less frustrating.
@@ -31,4 +35,3 @@ translations and perform various checks on translation files.
 	<flag name="subtitle">Support to edit subtitles</flag>
 </use>
 </pkgmetadata>
-

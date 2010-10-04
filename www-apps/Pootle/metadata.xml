@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-<herd></herd>
+<herd>no-herd</herd>
 <maintainer>
 	<email>ewoud@kohlvanwijngaarden.nl</email>
 	<name>Ewoud Kohl van Wijngaarden</name>
@@ -14,4 +14,3 @@ like these projects or run your own copy on an Intranet (for individual work,
 team work or Translate@thons).
 </longdescription>
 </pkgmetadata>
-
