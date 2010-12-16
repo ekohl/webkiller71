@@ -17,11 +17,12 @@ KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="zlib tcpd debug ident ssl ipv6 zeroconf"
 RESTRICT="test"
 
-DEPEND="zlib? ( sys-libs/zlib )
+RDEPEND="zlib? ( sys-libs/zlib )
 	ident? ( net-libs/libident )
 	tcpd? ( sys-apps/tcp-wrappers )
 	ssl? ( dev-libs/openssl )
-	zeroconf? ( net-dns/avahi[howl-compat] )
+	zeroconf? ( net-dns/avahi[howl-compat] )"
+DEPEND="${RDEPEND}
 	>=sys-apps/sed-4"
 
 src_prepare() {
