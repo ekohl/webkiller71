@@ -7,7 +7,7 @@ EAPI=3
 inherit distutils
 
 MY_PN="PyXB"
-MY_PV="${PV}%20(Stable)"
+MY_PV="${PV}%20(Beta)"
 
 DESCRIPTION="Generates Python source code for classes defined in XMLSchema"
 HOMEPAGE="http://pyxb.sourceforge.net"
