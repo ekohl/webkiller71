@@ -3,3 +3,6 @@
 
 # Live VCS
 =dev-python/yammer-9999
+
+# Live VCS
+=dev-python/python-rhev-9999
