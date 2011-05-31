@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -15,7 +15,7 @@ KEYWORDS="~x86 ~amd64"
 IUSE="+mysql postgres"
 
 DEPEND=""
-RDEPEND="virtual/php
+RDEPEND="dev-lang/php
 	dev-php/PEAR-MDB2
 	mysql? ( dev-php/PEAR-MDB2_Driver_mysql )
 	postgres? ( dev-php/PEAR-MDB2_Driver_pgsql )
