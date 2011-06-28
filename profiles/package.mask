@@ -2,7 +2,4 @@
 =dev-libs/wicked-9999
 
 # Live VCS
-=dev-python/yammer-9999
-
-# Live VCS
 =app-misc/movein-9999
