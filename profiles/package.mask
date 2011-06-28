@@ -6,3 +6,6 @@
 
 # Live VCS
 =dev-python/python-rhev-9999
+
+# Live VCS
+=app-misc/movein-9999
