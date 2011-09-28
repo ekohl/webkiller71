@@ -3,3 +3,6 @@
 
 # Live VCS
 =app-misc/movein-9999
+
+# Live VCS
+=dev-python/gitflow-9999
