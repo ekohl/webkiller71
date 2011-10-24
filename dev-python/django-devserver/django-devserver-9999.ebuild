@@ -4,7 +4,7 @@
 
 EAPI=3
 
-inherit distutils git
+inherit distutils git-2
 
 DESCRIPTION="A drop-in replacement for Django's runserver"
 HOMEPAGE="http://github.com/dcramer/django-devserver"
