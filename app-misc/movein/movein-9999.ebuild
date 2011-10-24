@@ -13,11 +13,8 @@ EGIT_REPO_URI="git://git.vireo.org/movein.git http://git.vireo.org/movein.git"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 IUSE=""
-
-DEPEND=""
-RDEPEND="${DEPEND}"
 
 src_install() {
 	dobin movein

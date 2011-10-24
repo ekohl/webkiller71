@@ -13,7 +13,7 @@ EGIT_BRANCH="feature/python-rewrite"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 IUSE=""
 
 RDEPEND="dev-python/git-python"
