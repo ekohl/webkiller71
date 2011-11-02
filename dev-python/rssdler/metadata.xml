@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-<herd>no-herd</herd>
-<maintainer>
-    <email>ewoud@kohlvanwijngaarden.nl</email>
-    <name>Ewoud Kohl van Wijngaarden</name>
-</maintainer>
-<longdescription lang="en">
-A utility to automatically download enclosures and other objects linked to from
-various types of RSS feeds. Works well on podcasts, videocasts, and torrents.
-</longdescription>
-<use>
-	<flag name="mechanize">Enable optional mechanize support</flag>
-</use>
+	<maintainer>
+		<email>ewoud@kohlvanwijngaarden.nl</email>
+		<name>Ewoud Kohl van Wijngaarden</name>
+	</maintainer>
+	<longdescription lang="en">
+		A utility to automatically download enclosures and other objects linked to from
+		various types of RSS feeds. Works well on podcasts, videocasts, and torrents.
+	</longdescription>
+	<use>
+		<flag name="mechanize">Enable optional mechanize support</flag>
+	</use>
 </pkgmetadata>

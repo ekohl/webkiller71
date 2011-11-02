@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-<herd>no-herd</herd>
-<maintainer>
-    <email>ewoud@kohlvanwijngaarden.nl</email>
-    <name>Ewoud Kohl van Wijngaarden</name>
-</maintainer>
-<longdescription lang="en">
-A drop in replacement for Django's built-in runserver command. Features include:
+	<maintainer>
+		<email>ewoud@kohlvanwijngaarden.nl</email>
+		<name>Ewoud Kohl van Wijngaarden</name>
+	</maintainer>
+	<longdescription lang="en">
+		A drop in replacement for Django's built-in runserver command. Features
+		include:
 
-* An extendable interface for handling things such as real-time logging.
-* Integration with the werkzeug interactive debugger.
-* An improved runserver allowing you to process requests simultaneously.
-</longdescription>
-<use>
-	<flag name="guppy">tracks memory usage (required for MemoryUseModule)</flag>
-	<flag name="werkzeug">interactive debugger</flag>
-</use>
+		* An extendable interface for handling things such as real-time logging.
+		* Integration with the werkzeug interactive debugger.
+		* An improved runserver allowing you to process requests simultaneously.
+	</longdescription>
+	<use>
+		<flag name="guppy">tracks memory usage (required for MemoryUseModule)</flag>
+		<flag name="werkzeug">interactive debugger</flag>
+	</use>
 </pkgmetadata>
