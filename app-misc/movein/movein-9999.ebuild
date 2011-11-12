@@ -16,6 +16,9 @@ SLOT="0"
 KEYWORDS=""
 IUSE=""
 
+RDEPEND="dev-vcs/git
+	dev-vcs/mr"
+
 src_install() {
 	dobin movein
 	dodoc README
