@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=3
+EAPI=4
 
 DESCRIPTION="Ewouds desktop"
 HOMEPAGE="http://kohlvanwijngaarden.nl/ewoud-desktop"
@@ -16,6 +16,7 @@ IUSE="nfs +X"
 DEPEND=""
 RDEPEND="app-admin/sudo
 	app-editors/vim
+	app-misc/movein
 	app-portage/gentoolkit
 	app-text/wgetpaste
 	net-dns/bind-tools
