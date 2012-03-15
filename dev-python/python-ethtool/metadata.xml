@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<email>ewoud@kohlvanwijngaarden.nl</email>
+		<name>Ewoud Kohl van Wijngaarden</name>
+	</maintainer>
+	<longdescription lang="en">
+		Python bindings for the ethtool kernel interface, that allows querying
+		and changing of ethernet card settings, such as speed, port,
+		autonegotiation, and PCI locations.
+	</longdescription>
+</pkgmetadata>
+
