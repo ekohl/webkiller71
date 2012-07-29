@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
-<pkgmetadata>
-	<longdescription lang="en">
-		An experimental alternative to the git-submodule command. Merges and
-		splits subtrees from your project into subprojects and back.
-	</longdescription>
-</pkgmetadata>
-
