@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
-RDEPEND="dev-libs/libnl"
+RDEPEND="dev-libs/libnl:1.1"
 DEPEND="${RDEPEND}
 	app-text/asciidoc"
 
