@@ -27,7 +27,7 @@ DEPEND="dev-util/shflags
 RDEPEND="${DEPEND}"
 
 EXEC_FILES="git-flow"
-SCRIPT_FILES="git-flow-init git-flow-feature git-flow-hotfix git-flow-release git-flow-support git-flow-version gitflow-common gitflow-shFlags"
+SCRIPT_FILES="git-flow-init git-flow-feature git-flow-hotfix git-flow-release git-flow-support git-flow-version gitflow-common"
 
 src_compile() {
 	return # No compilation needed
@@ -42,4 +42,6 @@ src_install() {
 	for script_file in $SCRIPT_FILES ; do
 		doins $script_file
 	done
+
+	dosym "${PREFIX}/usr/share/misc/shflags" "${PREFIX}/usr/bin/gitflow-shFlags"
 }
