@@ -4,7 +4,8 @@
 
 EAPI=4
 
-inherit distutils
+PYTHON_COMPAT=( python{2_6,2_7} )
+inherit distutils-r1
 
 DESCRIPTION="Tool to submit code to Gerrit"
 HOMEPAGE="https://launchpad.net/git-review"
@@ -14,3 +15,13 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
+
+DEPEND=">=virtual/python-argparse-1"
+
+python_install() {
+	distutils-r1_python_install
+
+	# Hack around installing to /usr/man
+	doman git-review.1
+	rm -rf "${D}/usr/man"
+}

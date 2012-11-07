@@ -1,1 +1,2 @@
 move dev-ruby/git-up dev-vcs/git-up
+move dev-python/git-review dev-vcs/git-review
