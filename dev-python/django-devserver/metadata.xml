@@ -15,6 +15,7 @@
 	</longdescription>
 	<use>
 		<flag name="guppy">tracks memory usage (required for MemoryUseModule)</flag>
+		<flag name="sqlparse">pretty SQL formatting</flag>
 		<flag name="werkzeug">interactive debugger</flag>
 	</use>
 </pkgmetadata>
