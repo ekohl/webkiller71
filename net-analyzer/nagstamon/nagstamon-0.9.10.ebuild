@@ -24,7 +24,7 @@ DEPEND="${PYTHON_DEPS}"
 RDEPEND="${DEPEND}
 	dev-python/pygtk[${PYTHON_USEDEP}]
 	dev-python/lxml[${PYTHON_USEDEP}]
-	dev-python/beautifulsoup:python-2[${PYTHON_USEDEP}]
+	dev-python/beautifulsoup:python-2
 	gnome-base/librsvg
 	gnome? ( dev-python/egg-python )
 	sound? ( media-sound/sox )"
