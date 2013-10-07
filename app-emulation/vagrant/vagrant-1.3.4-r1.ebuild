@@ -48,11 +48,12 @@ all_ruby_prepare() {
 	sed -i '/[Bb]undler/d' Rakefile || die
 	rm Gemfile || die
 
-	# loosen unslotted dependencies
+	# loosen dependencies
 	sed -e '/childprocess\|erubis\|log4r\|net-scp\|net-ssh/s/~>/>=/' \
 		-i ${PN}.gemspec || die
 
 	epatch "${FILESDIR}"/${PN}-1.2.1-no-warning.patch
+	epatch "${FILESDIR}"/${PN}-1.2.2-rvm.patch
 }
 
 each_ruby_install() {
