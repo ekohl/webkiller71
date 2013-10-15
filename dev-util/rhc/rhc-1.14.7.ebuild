@@ -20,6 +20,6 @@ RUBY_FAKEGEM_EXTRAINSTALL="conf/"
 ruby_add_rdepend "dev-ruby/archive-tar-minitar
 >=dev-ruby/commander-4.0
 >=dev-ruby/highline-1.6.11
->=dev-ruby/httpclient-2.0.11
+>=dev-ruby/httpclient-2.2
 >=dev-ruby/net-ssh-2.0.11
 dev-ruby/open4"
