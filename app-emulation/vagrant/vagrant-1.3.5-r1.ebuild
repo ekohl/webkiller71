@@ -54,6 +54,7 @@ all_ruby_prepare() {
 
 	epatch "${FILESDIR}"/${PN}-1.2.1-no-warning.patch
 	epatch "${FILESDIR}"/${PN}-1.2.2-rvm.patch
+	epatch "${FILESDIR}"/${P}-rubygems2.patch
 }
 
 each_ruby_install() {
