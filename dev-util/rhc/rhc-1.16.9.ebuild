@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI="5"
-USE_RUBY="ruby18 ruby19"
+USE_RUBY="ruby19"
 
 inherit ruby-fakegem
 
@@ -22,4 +22,5 @@ ruby_add_rdepend "dev-ruby/archive-tar-minitar
 >=dev-ruby/highline-1.6.11
 >=dev-ruby/httpclient-2.2
 >=dev-ruby/net-ssh-2.0.11
+>=dev-ruby/net-ssh-multi-1.2.0
 dev-ruby/open4"
