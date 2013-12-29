@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/vagrant/vagrant-1.2.2.ebuild,v 1.1 2013/04/24 05:34:47 radhermit Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/vagrant/vagrant-1.4.1.ebuild,v 1.1 2013/12/21 23:10:04 radhermit Exp $
 
 EAPI="5"
 USE_RUBY="ruby19"
@@ -54,7 +54,6 @@ all_ruby_prepare() {
 
 	epatch "${FILESDIR}"/${PN}-1.2.1-no-warning.patch
 	epatch "${FILESDIR}"/${PN}-1.2.2-rvm.patch
-	epatch "${FILESDIR}"/${P}-rubygems2.patch
 }
 
 each_ruby_install() {
