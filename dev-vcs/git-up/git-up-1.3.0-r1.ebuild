@@ -23,3 +23,11 @@ RDEPEND="
 	>=dev-python/six-1.9.0[${PYTHON_USEDEP}]
 	>=dev-python/termcolor-1.1.0[${PYTHON_USEDEP}]"
 DEPEND="${RDEPEND}"
+
+python_prepare_all() {
+	local PATCHES=(
+		"${FILESDIR}"/${P}-setup.patch
+	)
+
+	distutils-r1_python_prepare_all
+}
