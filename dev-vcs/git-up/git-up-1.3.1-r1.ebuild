@@ -17,9 +17,17 @@ KEYWORDS="~amd64"
 IUSE=""
 S="${WORKDIR}/PyGitUp-${PV}"
 
-RDEPEND="=dev-python/GitPython-1.0.1
-=dev-python/colorama-0.3.3
-=dev-python/termcolor-1.1.0*
-=dev-python/docopt-0.6.2
-=dev-python/six-1.9.0"
+RDEPEND=">=dev-python/GitPython-1.0.1
+>=dev-python/colorama-0.3.3
+>=dev-python/termcolor-1.1.0
+>=dev-python/docopt-0.6.2
+>=dev-python/six-1.9.0"
 DEPEND="${RDEPEND}"
+
+python_prepare_all() {
+	local PATCHES=(
+		"${FILESDIR}"/${P}-setup.patch
+	)
+
+	distutils-r1_python_prepare_all
+}
