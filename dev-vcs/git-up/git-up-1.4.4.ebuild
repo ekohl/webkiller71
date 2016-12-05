@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=5
+EAPI=6
 PYTHON_COMPAT=( python2_7 python3_{4,5} )
 
 inherit distutils-r1
@@ -10,12 +10,14 @@ inherit distutils-r1
 DESCRIPTION="Python implementation of git-up"
 HOMEPAGE="https://github.com/msiemens/PyGitUp"
 SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.zip"
+PATCHES=(
+	"${FILESDIR}/0001-Remove-scripts-from-setup.py.patch"
+)
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
-S="${WORKDIR}/PyGitUp-${PV}"
 
 RDEPEND=">=dev-python/click-6.0.0
 	>=dev-python/colorama-0.3.7
