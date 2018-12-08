@@ -1,0 +1,35 @@
+#!/usr/bin/env ruby
+
+require 'erb'
+require 'puppet_forge'
+
+MODULES = [
+  'puppetlabs-augeas_core',
+  'puppetlabs-cron_core',
+  'puppetlabs-host_core',
+  'puppetlabs-mount_core',
+  'puppetlabs-scheduled_task',
+  'puppetlabs-selinux_core',
+  'puppetlabs-sshkeys_core',
+  'puppetlabs-yumrepo_core',
+  'puppetlabs-zfs_core',
+  'puppetlabs-zone_core',
+]
+
+TEMPLATE = File.read('template.erb')
+RENDERER = ERB.new(TEMPLATE)
+ROOT = `git rev-parse --show-toplevel`.rstrip
+CATEGORY = 'app-admin'
+
+MODULES.each do |name|
+  mod = PuppetForge::Module.find(name)
+  release = mod.current_release
+  filename = "#{name}-#{release.version}.ebuild"
+  content = RENDERER.result(binding)
+
+  directory = File.join(ROOT, CATEGORY, name)
+  Dir.mkdir(directory) unless File.directory?(directory)
+  File.open(File.join(directory, filename), 'w') do |f|
+    f.write(content)
+  end
+end
