@@ -3,6 +3,10 @@
 
 EAPI=7
 
+PATCHES=(
+	"${FILESDIR}/0001-Ignore-hidden-files.patch"
+)
+
 DESCRIPTION="Install and manage cron resources."
 HOMEPAGE="https://github.com/puppetlabs/puppetlabs-cron_core"
 SRC_URI="https://forge.puppet.com/v3/files/${P}.tar.gz"
