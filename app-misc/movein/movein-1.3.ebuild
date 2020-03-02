@@ -8,7 +8,7 @@ DESCRIPTION="Keep your home directory in a VCS"
 HOMEPAGE="https://github.com/stew/movein"
 
 if [ "$PV" = "9999" ] ; then
-	inherit git-2
+	inherit git-r3
 	EGIT_REPO_URI="https://github.com/stew/movein"
 	KEYWORDS=""
 else
