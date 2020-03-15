@@ -23,7 +23,7 @@ RDEPEND="
 		>=dev-python/click-6.0.0[${PYTHON_MULTI_USEDEP}]
 		<dev-python/click-7.0.0[${PYTHON_MULTI_USEDEP}]
 		>=dev-python/colorama-0.3.7[${PYTHON_MULTI_USEDEP}]
-		>=dev-python/git-python-2.1.8[${PYTHON_MULTI_USEDEP}]
+		>=dev-python/GitPython-2.1.8[${PYTHON_MULTI_USEDEP}]
 		>=dev-python/six-1.10.0[${PYTHON_MULTI_USEDEP}]
 		>=dev-python/termcolor-1.1.0[${PYTHON_MULTI_USEDEP}]
 	')"
