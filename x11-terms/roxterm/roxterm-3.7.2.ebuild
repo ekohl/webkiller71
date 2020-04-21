@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake gnome2-utils
+inherit cmake xdg-utils
 
 DESCRIPTION="A terminal emulator designed to integrate with the ROX environment"
 HOMEPAGE="https://github.com/realh/roxterm"
@@ -29,14 +29,10 @@ PATCHES=(
 	"${FILESDIR}"/${P}-appdata-to-metainfo.patch
 )
 
-pkg_preinst() {
-	gnome2_icon_savelist
-}
-
 pkg_postinst() {
-	gnome2_icon_cache_update
+	xdg_icon_cache_update
 }
 
 pkg_postrm() {
-	gnome2_icon_cache_update
+	xdg_icon_cache_update
 }
