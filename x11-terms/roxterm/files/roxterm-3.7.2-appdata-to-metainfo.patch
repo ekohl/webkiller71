@@ -1,0 +1,58 @@
+From e30aa0dc112b54d7c7f9cc1673cee2ac5ba47df6 Mon Sep 17 00:00:00 2001
+From: Ewoud Kohl van Wijngaarden <ewoud@kohlvanwijngaarden.nl>
+Date: Tue, 21 Apr 2020 22:18:22 +0200
+Subject: [PATCH 1/2] Install appdata to metainfo
+
+https://www.freedesktop.org/software/appstream/docs/chap-Metadata.html
+states it should be install to /usr/share/metainfo/%{id}.metainfo.xml
+and that /usr/share/appdata is deprecated.
+---
+ CMakeLists.txt                                    | 12 ++++++------
+ roxterm.appdata.xml.in => roxterm.metainfo.xml.in |  0
+ 2 files changed, 6 insertions(+), 6 deletions(-)
+ rename roxterm.appdata.xml.in => roxterm.metainfo.xml.in (100%)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 3012cce..a520366 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -13,9 +13,9 @@ execute_process(COMMAND date "+%Y-%m-%d"
+ set(APPINFO_VERSION "$ROXTERM_VERSION $ROXTERM_DATE")
+ configure_file(${PROJECT_SOURCE_DIR}/AppInfo.xml.in
+     ${PROJECT_SOURCE_DIR}/AppInfo.xml)
+-# appdata should really be processed by i18n
+-configure_file(${PROJECT_SOURCE_DIR}/roxterm.appdata.xml.in
+-    ${PROJECT_BINARY_DIR}/roxterm.appdata.xml)
++# metainfo should really be processed by i18n
++configure_file(${PROJECT_SOURCE_DIR}/roxterm.metainfo.xml.in
++    ${PROJECT_BINARY_DIR}/roxterm.metainfo.xml)
+ configure_file(${PROJECT_SOURCE_DIR}/roxterm.spec.in
+     ${PROJECT_SOURCE_DIR}/roxterm.spec)
+ configure_file(${PROJECT_SOURCE_DIR}/roxterm.1.xml.in
+@@ -62,8 +62,8 @@ endif ()
+ install(FILES roxterm.desktop
+     DESTINATION ${CMAKE_INSTALL_DATADIR}/applications)
+ 
+-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/roxterm.appdata.xml
+-    DESTINATION ${CMAKE_INSTALL_DATADIR}/appdata)
++install(FILES ${CMAKE_CURRENT_BINARY_DIR}/roxterm.metainfo.xml
++    DESTINATION ${CMAKE_INSTALL_DATADIR}/metainfo)
+ 
+ 
+ # It would be nice if we could use cmake -E tar here, but it doesn't support
+@@ -93,7 +93,7 @@ add_custom_command(OUTPUT "${TARBALL_NAME}"
+     README.md
+     README.translations
+     roxterm.1.xml.in
+-    roxterm.appdata.xml.in
++    roxterm.metainfo.xml.in
+     roxterm-config.1.xml.in
+     roxterm.desktop
+     roxterm.lsm.in
+diff --git a/roxterm.appdata.xml.in b/roxterm.metainfo.xml.in
+similarity index 100%
+rename from roxterm.appdata.xml.in
+rename to roxterm.metainfo.xml.in
+-- 
+2.25.3
+
