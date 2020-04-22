@@ -18,7 +18,7 @@ RDEPEND=">=dev-libs/dbus-glib-0.100
 	dev-libs/libpcre2
 	sys-apps/dbus
 	x11-libs/gtk+:3
-	x11-libs/vte:2.91
+	x11-libs/vte:2.91[vanilla]
 	!x11-terms/roxterm:0"
 # slotted versions of roxterm need block one another due to file collisions. #565288
 DEPEND="${RDEPEND}
