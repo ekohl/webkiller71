@@ -2,9 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
-PYTHON_COMPAT=( python3_{6,7,8} )
+PYTHON_COMPAT=( python3_{6,7,8,9} )
 DISTUTILS_SINGLE_IMPL=1
-DISTUTILS_USE_SETUPTOOLS=rdepend
+DISTUTILS_USE_SETUPTOOLS=pyproject.toml
 
 inherit distutils-r1
 
@@ -20,10 +20,10 @@ IUSE=""
 RDEPEND="
 	${PYTHON_DEPS}
 	$(python_gen_cond_dep '
-		>=dev-python/click-6.0.0[${PYTHON_MULTI_USEDEP}]
-		<dev-python/click-7.0.0[${PYTHON_MULTI_USEDEP}]
-		>=dev-python/colorama-0.3.7[${PYTHON_MULTI_USEDEP}]
-		>=dev-python/GitPython-2.1.8[${PYTHON_MULTI_USEDEP}]
+		>=dev-python/click-7.0.0[${PYTHON_MULTI_USEDEP}]
+		<dev-python/click-8.0.0[${PYTHON_MULTI_USEDEP}]
+		>=dev-python/colorama-0.4.0[${PYTHON_MULTI_USEDEP}]
+		>=dev-python/GitPython-3.0.0[${PYTHON_MULTI_USEDEP}]
 		>=dev-python/six-1.10.0[${PYTHON_MULTI_USEDEP}]
 		>=dev-python/termcolor-1.1.0[${PYTHON_MULTI_USEDEP}]
 	')"
